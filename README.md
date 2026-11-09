@@ -22,7 +22,7 @@ Neon shows only where your focus is. Tiles are square, tabs are flat, and the re
 - 🎯 **Neon on focus.** The focused pane gets a 2 px frame: pink on the top and left edges, cyan on the right and bottom. The active tab gets the same pink-to-cyan line. Everything else stays quiet.
 - 🟪 **Square tiles.** Every corner is square, after [Omarchy](https://github.com/omacom/omarchy). Spinners stay round.
 - 📑 **Flat tab cells.** Tabs are 240 px cells with 1 px dividers, in a mono font. Hover is an 8 % fill, the active tab an 18 % fill, a pressed tab 22 %.
-- 🌈 **SynthWave '84 colors.** The ANSI palette and the code colors come from [SynthWave '84](https://github.com/robb0wen/synthwave-vscode), tuned for contrast.
+- 🌈 **Neon palette.** Hot pink, neon cyan and electric blue on night purple, tuned for contrast on every surface.
 - 🧘 **No noise.** There is no glow, no blur, no sun and no grid floor. Motion shows only where it has a meaning: a 539 ms fade when the focus moves, and no fade when Reduce Motion is on.
 
 ## 🎨 Palette
@@ -139,7 +139,7 @@ tern-night-drive/
 ├── themes/
 │   └── night-drive.css    # the theme
 ├── setup.sh               # links the theme and applies the window settings
-├── LICENSE                # MIT, with the SynthWave '84 credit
+├── LICENSE                # MIT
 ├── assets/
 │   ├── screenshot.txt     # the screenshot scenario
 │   ├── shoot.sh           # renders the screenshots offscreen
@@ -151,13 +151,13 @@ tern-night-drive/
 
 ## 🙏 Credits
 
-- 🌆 [SynthWave '84](https://github.com/robb0wen/synthwave-vscode) by Robb Owen (MIT): the palette. The ANSI and code colors use its values, some tuned for contrast.
+- 🌆 [SynthWave '84](https://github.com/robb0wen/synthwave-vscode) by Robb Owen: some ANSI and code colors come from it.
 - 🧱 [Omarchy](https://github.com/omacom/omarchy) and [herdr-omarchy](https://github.com/shafiqimtiaz/herdr-omarchy): square tiles, flat tabs, focus frames.
 - 🖥️ [Tern](https://docs.stencil.so/tern/) by Stencil: the terminal that this theme dresses.
 
 ## 📄 License
 
-[MIT](LICENSE). The palette is based on SynthWave '84, © 2019 Robb Owen, also MIT.
+[MIT](LICENSE).
 
 <div align="center">
 <sub>Night Drive is for late-night code sessions. 🌙</sub>
