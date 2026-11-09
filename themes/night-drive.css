@@ -1,0 +1,259 @@
+/* Night Drive: a synthwave Tern theme. Source: https://github.com/matteoantoci/tern-night-drive */
+:root {
+	color-scheme: dark;
+	--page: #140f1f;
+	--tv-bg: #1c1629;
+	--tv-fg: #ece6f5;
+	--tv-cur: #ff5cc8;
+	--tv-cur-ink: #1c1629;
+	--card: #251e35;
+	--code-bg: #181225;
+	--ink: #ece6f5;
+	--t1: #ece6f5;
+	--t2: #b6abc9;
+	--t3: #8f84a4;
+	--t4: #716788;
+	--accent: #ff5cc8;
+	/* --a1 and --a2 make Tern's --grad: the border of primary buttons and the 1px line on top of
+	   the focused pane. Pink to cyan, the same focus gradient as the active tab line. */
+	--a1: var(--accent);
+	--a2: var(--live);
+	/* Pink is for focus and input only: the focused pane frame, the cursor, the selection
+	   and the focused agent row. Accent text and fills elsewhere use the neutral ramp. */
+	--accent-ink: var(--t1);
+	--accent-fill: #4a3f63;
+	--ok: #72f1b8;
+	--bad: #fe4450;
+	--warn: #fede5d;
+	--live: #36f9f6;
+	--ansi0: #272036;
+	--ansi1: #fe4450;
+	--ansi2: #72f1b8;
+	--ansi3: #fede5d;
+	--ansi4: #6e8bff;
+	--ansi5: #ff7edb;
+	--ansi6: #36f9f6;
+	--ansi7: #e0d5f0;
+	--ansi8: #7d7295;
+	--ansi9: #ff6b7a;
+	--ansi10: #9dffd5;
+	--ansi11: #fff19a;
+	--ansi12: #9db1ff;
+	--ansi13: #ffa8ec;
+	--ansi14: #8ffcfa;
+	--ansi15: #ffffff;
+	--tk-keyword: #fede5d;
+	--tk-string: #ff8b39;
+	--tk-function: #36f9f6;
+	--tk-type: #ff7edb;
+	--tk-number: #f97e72;
+	--tk-comment: #9289aa;
+	--tk-operator: #857b9c;
+	--tk-punct: #857b9c;
+	/* Chat headings in white: size and weight mark them, and pink stays for focus and input. */
+	--omp-mdHeading: var(--t1);
+	--omp-mdLink: #36f9f6;
+	--omp-mdCode: #fede5d;
+	--omp-toolTitle: #36f9f6;
+	--omp-toolDiffAdded: #72f1b8;
+	--omp-toolDiffRemoved: #fe4450;
+	/* omp's accent, used for charts, tones and highlights: the palette blue, so that pink
+	   stays for focus and input, and data still has a color. */
+	--omp-accent: #6e8bff;
+	--omp-muted: #8f84a4;
+	--omp-dim: #716788;
+	--omp-success: #72f1b8;
+	--omp-warning: #fede5d;
+	--omp-error: #fe4450;
+	/* omp colors code in chat with these tokens first, so they point at the --tk-* palette above.
+	   Without them, code blocks in omp chats use the base theme's syntax colors. */
+	--omp-syntaxKeyword: var(--tk-keyword);
+	--omp-syntaxString: var(--tk-string);
+	--omp-syntaxFunction: var(--tk-function);
+	--omp-syntaxType: var(--tk-type);
+	--omp-syntaxNumber: var(--tk-number);
+	--omp-syntaxComment: var(--tk-comment);
+	--omp-syntaxOperator: var(--tk-operator);
+	--omp-syntaxPunctuation: var(--tk-punct);
+	--omp-syntaxVariable: var(--t1);
+	/* Span and tone colors, pinned to this palette so that no base-theme color leaks in. */
+	--sf-c-muted: var(--t3);
+	--sf-c-dim: var(--t4);
+	--sf-c-accent: #6e8bff;
+	--sf-c-success: var(--ok);
+	--sf-c-warning: var(--warn);
+	--sf-c-error: var(--bad);
+	--sf-c-info: #6e8bff;
+	--sf-c-link: #36f9f6;
+	--sf-c-num: #f97e72;
+	--sf-c-path: var(--t1);
+	--sf-c-key: var(--t2);
+	--sf-c-ins: var(--ok);
+	--sf-c-del: var(--bad);
+	--sf-c-code: #fede5d;
+	--sf-accent: #6e8bff;
+	--sf-info: #6e8bff;
+	--sf-muted: var(--t3);
+	--tv-sel: rgb(from #ff5cc8 r g b / 12%);
+	--tv-sel-a: rgb(from #ff5cc8 r g b / 12%);
+	--tv-sel-b: rgb(from #ff5cc8 r g b / 12%);
+	/* Scrim behind the command palette and every other modal (after Omarchy's popups), and a flat
+	   modal background: Tern's default adds a pink glow from --accent. */
+	--modal-dim: rgb(from var(--page) r g b / 50%);
+	--modal-bg: rgb(from var(--card) r g b / 96%);
+	/* Square corners, part 1: Tern's radius tokens. These 6 are the ones that :root controls;
+	   other radius tokens are set again on their components, so a :root value does not reach them. */
+	--r-chip: 0px;
+	--r-ctl: 0px;
+	--r-card: 0px;
+	--r-panel: 0px;
+	--tn-island-r: 0px;
+	--tn-tile-r: 0px;
+}
+
+/* Square corners, part 2: the parts with a fixed radius, for example the composer card (16px),
+   the stop button (8px), the avatar (50%) and badges (999px). Round indicators stay round: Tern's
+   shared indicator classes and every part inside them. Tern does not match [class...] attribute
+   selectors, so this list uses class selectors. Add a class here if a new spinner turns square. */
+:not(:is(.sf-spinner, .sf-spindle, .sf-orbit, .sf-dots, .sf-ring, .sf-mt-ring), :is(.sf-spinner, .sf-spindle, .sf-orbit, .sf-dots, .sf-ring, .sf-mt-ring) *) {
+	border-radius: 0;
+}
+
+#tabbar {
+	background: var(--page);
+	box-shadow: inset 0 -1px 0 rgb(from var(--ink) r g b / 8%);
+}
+
+/* Flat tab cells (after herdr-omarchy): full-height cells of one width, no gap,
+   a 1px divider on each side, and the active tab marked by an 18% fill, not by a line. */
+.tb-tabs {
+	gap: 0;
+	box-shadow: inset 1px 0 0 rgb(from var(--ink) r g b / 10%);
+}
+
+/* Scoped to the tab bar: other Tern parts also use role=tab, for example the palette scopes.
+   The divider is a border, not a box-shadow, and the rule sets no background, so Tern's own
+   highlights for a drop target, a picked tab and a dragged tab still show. */
+#tabbar [role='tab'] {
+	box-sizing: border-box;
+	height: 100%;
+	/* 240px cells that shrink when many tabs are open, so they never push past the + button. */
+	flex: 0 1 240px;
+	width: 240px;
+	min-width: 0;
+	max-width: 240px;
+	margin: 0;
+	padding: 0 12px;
+	border-right: 1px solid rgb(from var(--ink) r g b / 10%);
+}
+
+#tabbar [role='tab']:hover {
+	background: rgb(from var(--ink) r g b / 8%);
+}
+
+#tabbar [role='tab']:active {
+	background: rgb(from var(--ink) r g b / 22%);
+}
+
+/* Active tab: the 18% fill, plus the focus gradient as a 2px line on top. */
+#tabbar [role='tab'][aria-selected='true'] {
+	background-color: transparent;
+	background-image:
+		linear-gradient(90deg, var(--accent), var(--live)),
+		linear-gradient(rgb(from var(--ink) r g b / 18%), rgb(from var(--ink) r g b / 18%));
+	background-size: 100% 2px, 100% 100%;
+	background-position: 0 0, 0 0;
+	background-repeat: no-repeat;
+}
+
+/* Framed tiles (after herdr-omarchy): a 2px solid muted frame on every pane, and on the
+   focused pane a 45 degree pink-to-cyan gradient (Omarchy's gradient active border).
+   The frame is an overlay, so it does not change the pane size and takes no clicks. */
+section.tn-pane::after {
+	content: "";
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	border: 2px solid var(--ansi8);
+	pointer-events: none;
+	z-index: 5;
+	/* Omarchy's focus change: the border color fades in 539 ms with easeOutQuint. */
+	transition: border-color 539ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	section.tn-pane::after {
+		transition: none;
+	}
+}
+
+/* Tern does not cut the mask out (the gradient filled the whole pane), so the focused frame
+   uses two solid colors instead: pink on the top and left edges, cyan on the right and bottom. */
+section.tn-pane.on::after {
+	border-color: var(--accent) var(--live) var(--live) var(--accent);
+}
+
+/* Tern's own focus marker: a 1px --grad line on top of the focused pane. Our frame is the only
+   focus marker (as in Omarchy), so the line is hidden. Tern's exact selector: if Tern renames it,
+   the line only shows again. */
+.tn-stage .tn-pane.multi:is(.on, .was):not(.headed) .tn-body::before {
+	opacity: 0;
+}
+
+/* Command palette: the focus frame (the scrim is the --modal-dim token). */
+.tn-cmdk {
+	border: 2px solid;
+	border-color: var(--accent) var(--live) var(--live) var(--accent);
+	box-shadow: none;
+}
+
+/* Terminal scrollbar: a muted square thumb that turns pink under the pointer or while dragged. */
+.tv-thumb {
+	background: var(--ansi8);
+}
+
+.tv-bar:hover .tv-thumb,
+.tv-bar.drag .tv-thumb {
+	background: var(--accent);
+}
+
+/* Composer frame: only the plain composer. In bash and python mode (omp.editor.bash, .python)
+   Tern keeps its own frame with the colored mode stripe, so the mode stays visible. */
+[data-role='omp.editor'] {
+	box-shadow: inset 0 0 0 1px rgb(from var(--ink) r g b / 10%);
+}
+
+/* Tab program icons by state (Tern's own .tn-face), so pink on the tabs means only "focused". */
+.tn-face[data-st='working'] { color: var(--live); }
+.tn-face[data-st='waiting'] { color: var(--warn); }
+.tn-face[data-st='bell'] { color: var(--warn); }
+.tn-face[data-st='failed'] { color: var(--bad); }
+.tn-face[data-st='done'] { color: var(--ok); }
+
+/* Mono UI font (after herdr-omarchy) in Tern's chrome: the tab bar and the composer in every mode.
+   The chat prose keeps the sans face for long reading. JetBrainsMono Nerd Font is installed on this Mac. */
+#tabbar,
+[data-role^='omp.editor'],
+[data-role^='omp.editor'] *:not(.ico):not(.icon):not(.sf-icon):not(.sf-t-icon) {
+	font-family: 'JetBrainsMono Nerd Font Mono', 'JetBrainsMono NFM', ui-monospace, monospace;
+}
+
+/* Hover state (after herdr-omarchy): an 8% fill and a 1px border at 25%,
+   on the tab bar buttons and the composer controls. */
+#tabbar .icon-btn:hover,
+[data-role^='omp.editor'] .sf-act:hover {
+	background: rgb(from var(--ink) r g b / 8%);
+	box-shadow: inset 0 0 0 1px rgb(from var(--ink) r g b / 25%);
+}
+
+#tabbar .icon-btn:active,
+[data-role^='omp.editor'] .sf-act:active {
+	background: rgb(from var(--ink) r g b / 22%);
+}
+
+/* No italic for emphasis (unslop): omp's thinking lines (also while they stream, omp.thinking.live),
+   the recap lines and the composer placeholder. */
+[data-role^='omp.thinking'] *,
+[data-role='omp.recap'] *,
+.sf-ed-ph * {
+	font-style: normal;
+}

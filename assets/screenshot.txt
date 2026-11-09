@@ -1,0 +1,29 @@
+# The README screenshots, with demo content. Run assets/shoot.sh: it fills in @THEME@ and @REPO@.
+size 1440 900 2
+appearance dark
+css user-theme.css @THEME@
+style islands
+padding 14
+status-bar on
+ready
+
+# Tab 1: the ANSI palette beside the theme file.
+rename "night drive"
+run "cd @REPO@ && clear && sh assets/palette.sh"
+ready
+file open @REPO@/themes/night-drive.css split 2
+focus left
+
+# Two more tabs, to show the flat tab cells.
+tab new
+rename "build"
+tab new
+rename "notes"
+tab 1
+wait 600
+shot overview
+
+# The command palette with its two-color frame and scrim.
+palette
+wait 400
+shot palette

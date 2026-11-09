@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# Early drafts, kept on disk only: the HTML prototypes and the first theme (Sunset Grid).
+prototype/
+themes/sunset-grid.css
