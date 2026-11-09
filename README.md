@@ -9,6 +9,7 @@ Neon shows only where your focus is. Tiles are square, tabs are flat, and the re
 ![Dark](https://img.shields.io/badge/mode-dark-36f9f6?style=flat-square&labelColor=140f1f)
 ![Pure CSS](https://img.shields.io/badge/pure-CSS-6e8bff?style=flat-square&labelColor=140f1f)
 ![macOS](https://img.shields.io/badge/macOS-supported-72f1b8?style=flat-square&labelColor=140f1f)
+![MIT license](https://img.shields.io/badge/license-MIT-ff7edb?style=flat-square&labelColor=140f1f)
 
 <img src="assets/overview.png" alt="Night Drive in Tern: a shell with the 16 ANSI colors and a build log beside the theme file, a pink and cyan frame on the focused pane, flat mono tabs on top" width="100%">
 
@@ -138,6 +139,7 @@ tern-night-drive/
 ├── themes/
 │   └── night-drive.css    # the theme
 ├── setup.sh               # links the theme and applies the window settings
+├── LICENSE                # MIT, with the SynthWave '84 credit
 ├── assets/
 │   ├── screenshot.txt     # the screenshot scenario
 │   ├── shoot.sh           # renders the screenshots offscreen
@@ -149,9 +151,13 @@ tern-night-drive/
 
 ## 🙏 Credits
 
-- 🌆 [SynthWave '84](https://github.com/robb0wen/synthwave-vscode) by Robb Owen: the palette.
+- 🌆 [SynthWave '84](https://github.com/robb0wen/synthwave-vscode) by Robb Owen (MIT): the palette. The ANSI and code colors use its values, some tuned for contrast.
 - 🧱 [Omarchy](https://github.com/omacom/omarchy) and [herdr-omarchy](https://github.com/shafiqimtiaz/herdr-omarchy): square tiles, flat tabs, focus frames.
 - 🖥️ [Tern](https://docs.stencil.so/tern/) by Stencil: the terminal that this theme dresses.
+
+## 📄 License
+
+[MIT](LICENSE). The palette is based on SynthWave '84, © 2019 Robb Owen, also MIT.
 
 <div align="center">
 <sub>Night Drive is for late-night code sessions. 🌙</sub>
