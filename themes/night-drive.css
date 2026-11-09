@@ -111,20 +111,26 @@
 	--tn-tile-r: 0px;
 }
 
-/* Square corners, part 2: the parts with a fixed radius, for example the composer card (16px),
-   the stop button (8px), the avatar (50%) and badges (999px). Round indicators stay round, and
-   every part inside them. Line 1: Tern's shared indicator classes. Line 2: every other element
-   that Tern's CSS turns with a rotate animation: the tool card and trace step rings, the git and
-   kit spinners, the assistant orbit, the editor save ring and the active setup step. A turning
-   ::after needs no entry, because this rule does not match pseudo-elements. Tern does not match
-   [class...] attribute selectors, so this list uses class selectors. */
-:not(
-	:is(.sf-spinner, .sf-spindle, .sf-orbit, .sf-dots, .sf-ring, .sf-mt-ring,
-		.sf-tool-spin, .sf-trace-spin, .kg-spin, .ki-spin, .gp-spin, .cy-blob, .ed-dirty.saving, .tn-hd-stp.act .mk),
-	:is(.sf-spinner, .sf-spindle, .sf-orbit, .sf-dots, .sf-ring, .sf-mt-ring,
-		.sf-tool-spin, .sf-trace-spin, .kg-spin, .ki-spin, .gp-spin, .cy-blob, .ed-dirty.saving, .tn-hd-stp.act .mk) *
-) {
+/* Square corners, part 2: every element and every ::before and ::after with a fixed radius, for
+   example the composer card (16px), the stop button (8px), avatars, dots, radios and badges. */
+*,
+*::before,
+*::after {
 	border-radius: 0;
+}
+
+/* Only the parts that Tern turns with a rotate animation stay round, because a turning square
+   looks like a tumbling diamond. Each one is 50% in Tern's own CSS. A pulsing or static dot is
+   square. Tern does not match [class...] attribute selectors, so this list uses class selectors. */
+.sf-orbit, .sf-orbit > i,                              /* shared spinner ring and its dot */
+.sf-tool-spin, .sf-tool-spin::after,                   /* running tool card */
+.sf-trace-spin, .sf-trace-spin::after,                 /* running trace step */
+.kg-spin, .ki-spin, .gp-spin,                          /* block spinners */
+.cy-blob,                                              /* assistant orbit */
+.ed-dirty.saving, .tn-dirty.saving,                    /* file save rings */
+.tn-hd-stp.act .mk, .tn-hd-stp.act .mk::after,         /* active setup step */
+.mdl-go.busy::after {                                  /* busy dialog button */
+	border-radius: 50%;
 }
 
 #tabbar {

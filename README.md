@@ -20,7 +20,7 @@ Neon shows only where your focus is. Tiles are square, tabs are flat, and the re
 ## ✨ Highlights
 
 - 🎯 **Neon on focus.** The focused pane gets a 2 px frame: pink on the top and left edges, cyan on the right and bottom. The active tab gets the same pink-to-cyan line. Everything else stays quiet.
-- 🟪 **Square tiles.** Every corner is square, after [Omarchy](https://github.com/omacom/omarchy). Spinners stay round.
+- 🟪 **Square everything.** Every corner is square, after [Omarchy](https://github.com/omacom/omarchy): tiles, buttons, badges, dots, radios and avatars. Only turning spinners stay round.
 - 📑 **Flat tab cells.** Tabs are 240 px cells with 1 px dividers, in a mono font. Hover is an 8 % fill, the active tab an 18 % fill, a pressed tab 22 %.
 - 🌈 **Neon palette.** Hot pink, neon cyan and electric blue on night purple, tuned for contrast on every surface.
 - 🧘 **No noise.** There is no glow, no blur, no sun and no grid floor. Motion shows only where it has a meaning: a 539 ms fade when the focus moves, and no fade when Reduce Motion is on.
@@ -97,7 +97,7 @@ tern ctl theme night-drive
 
 **🧱 Shape**
 
-- Square corners. Only spinners and status rings stay round.
+- Square corners on every element. Only a turning spinner stays round, because a turning square looks like a tumbling diamond.
 - 2 px frames on every pane: muted at rest, pink and cyan on focus.
 - One focus marker per pane. Tern's own 1 px focus line is hidden.
 
